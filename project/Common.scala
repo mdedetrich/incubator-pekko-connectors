@@ -43,7 +43,7 @@ object Common extends AutoPlugin {
     // Ignore unused keys which affect documentation
     excludeLintKeys ++= Set(scmInfo, projectInfoVersion, autoAPIMappings))
 
-  override lazy val projectSettings = Dependencies.Common ++ Seq(
+  override lazy val projectSettings = Dependencies.Base ++ Seq(
     projectInfoVersion := (if (isSnapshot.value) "snapshot" else version.value),
     crossVersion := CrossVersion.binary,
     crossScalaVersions := Dependencies.ScalaVersions,
